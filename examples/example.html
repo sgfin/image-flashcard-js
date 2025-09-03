@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Flashcard Example - Urea Cycle</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 { color: #2c3e50; }
+        .quiz-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Urea Cycle Pathway - Interactive Visual Quiz</h1>
+    
+    <p>This example demonstrates the Image Flashcard JS library with an educational biochemistry diagram. The quiz starts with a clean image and provides interactive learning on demand.</p>
+
+    <!-- Interactive Visual Quiz -->
+    <div class="quiz-container" data-quiz-config="urea-cycle-quiz.json">
+        <img src="urea-cycle.jpg" alt="Urea Cycle Pathway" style="max-width: 700px; height: auto;">
+    </div>
+
+    <h2>How it Works</h2>
+    <ol>
+        <li><strong>Clean Start:</strong> Users first see the educational diagram without distractions</li>
+        <li><strong>On-Demand Learning:</strong> Click "Show Image Quiz" to reveal interactive elements</li>
+        <li><strong>Progressive Discovery:</strong> Click boxes individually or use group controls</li>
+        <li><strong>Return to Clean View:</strong> "Hide Quiz" button returns to the original diagram</li>
+    </ol>
+
+    <h2>Features</h2>
+    <ul>
+        <li>✅ Zero dependencies - pure JavaScript</li>
+        <li>✅ Responsive design - works on all devices</li>
+        <li>✅ Customizable positioning - controls can be placed anywhere</li>
+        <li>✅ Educational focus - clean, distraction-free interface</li>
+    </ul>
+
+    <!-- Include the Image Flashcard JS library -->
+    <script src="../image-flashcard.js"></script>
+</body>
+</html>

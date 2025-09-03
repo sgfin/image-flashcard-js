@@ -1,0 +1,232 @@
+{
+  "image": "urea-cycle.jpg",
+  "imageDisplayDimensions": {
+    "width": 500,
+    "height": 566
+  },
+  "groups": {
+    "enzymes": {
+      "name": "Enzyme",
+      "color": "#18aa29",
+      "boxes": []
+    },
+    "productsreactants": {
+      "name": "Product/Reactant",
+      "color": "#ff6b6b",
+      "boxes": []
+    },
+    "disease": {
+      "name": "Disease",
+      "color": "#8047d7",
+      "boxes": []
+    }
+  },
+  "boxes": [
+    {
+      "id": "box12",
+      "label": "",
+      "answer": "",
+      "x": 34.968770900859184,
+      "y": 14.980064990089172,
+      "width": 12.96159049375641,
+      "height": 13.458886116865541,
+      "group": "enzymes",
+      "useGroupLabel": true,
+      "element": {}
+    },
+    {
+      "id": "box13",
+      "label": "",
+      "answer": "",
+      "x": 25.754385964912277,
+      "y": 30.067042052522993,
+      "width": 17.087719298245613,
+      "height": 10.184063164099461,
+      "group": "enzymes",
+      "useGroupLabel": true,
+      "element": {}
+    },
+    {
+      "id": "box14",
+      "label": "",
+      "answer": "",
+      "x": 44.70175438596491,
+      "y": 34.995301863536405,
+      "width": 17.263157894736842,
+      "height": 9.822480878021295,
+      "group": "enzymes",
+      "useGroupLabel": true,
+      "element": {}
+    },
+    {
+      "id": "box15",
+      "label": "",
+      "answer": "",
+      "x": 67.85964912280701,
+      "y": 49.12795693920921,
+      "width": 16.912280701754387,
+      "height": 9.985511967363147,
+      "group": "enzymes",
+      "useGroupLabel": true,
+      "element": {}
+    },
+    {
+      "id": "box17",
+      "label": "",
+      "answer": "",
+      "x": 35.578947368421055,
+      "y": 70.96858858020381,
+      "width": 12,
+      "height": 9.65944978867944,
+      "group": "enzymes",
+      "useGroupLabel": true,
+      "element": {}
+    },
+    {
+      "id": "box18",
+      "label": "",
+      "answer": "",
+      "x": 64.70175438596492,
+      "y": 77.91788046597485,
+      "width": 17.614035087719298,
+      "height": 9.191307180417889,
+      "group": "enzymes",
+      "useGroupLabel": true,
+      "element": {}
+    },
+    {
+      "id": "box19",
+      "label": "",
+      "answer": "",
+      "x": 67.15024712921328,
+      "y": 31.68222621184919,
+      "width": 12,
+      "height": 8,
+      "group": "productsreactants",
+      "element": {}
+    },
+    {
+      "id": "box20",
+      "label": "",
+      "answer": "",
+      "x": 77.54254310967103,
+      "y": 64.9572710951526,
+      "width": 21.35498655963928,
+      "height": 7.640933572710951,
+      "group": "productsreactants",
+      "element": {}
+    },
+    {
+      "id": "box21",
+      "label": "",
+      "answer": "",
+      "x": 90.00161058376142,
+      "y": 52.508078994614,
+      "width": 9.998389416238583,
+      "height": 5.690358530625362,
+      "group": "productsreactants",
+      "element": {}
+    },
+    {
+      "id": "box22",
+      "label": "",
+      "answer": "",
+      "x": 69.35814292020095,
+      "y": 96.90752203060644,
+      "width": 11.940342358756151,
+      "height": 3.0924779693935562,
+      "group": "productsreactants",
+      "element": {}
+    },
+    {
+      "id": "box23",
+      "label": "",
+      "answer": "",
+      "x": 47.80603763301002,
+      "y": 90.29446943017257,
+      "width": 10.826979472140762,
+      "height": 5.676770295848783,
+      "group": "productsreactants",
+      "element": {}
+    },
+    {
+      "id": "box24",
+      "label": "",
+      "answer": "",
+      "x": 19.582518859861015,
+      "y": 68.48653500897666,
+      "width": 12,
+      "height": 8,
+      "group": "productsreactants",
+      "element": {}
+    },
+    {
+      "id": "box25",
+      "label": "",
+      "answer": "",
+      "x": 28.069671551854636,
+      "y": 52.965149226888094,
+      "width": 12,
+      "height": 7.004330126792335,
+      "group": "productsreactants",
+      "element": {}
+    },
+    {
+      "id": "box26",
+      "label": "",
+      "answer": "",
+      "x": 19.42237591837258,
+      "y": 25.428626365392986,
+      "width": 17.709711239579526,
+      "height": 4.917872736940946,
+      "group": "productsreactants",
+      "useGroupLabel": false,
+      "element": {}
+    },
+    {
+      "id": "box27",
+      "label": "",
+      "answer": "",
+      "x": 45.122464559328826,
+      "y": 24.141831238779172,
+      "width": 21.196427465408107,
+      "height": 6.922800718132855,
+      "group": "productsreactants",
+      "useGroupLabel": false,
+      "element": {}
+    },
+    {
+      "id": "box32",
+      "label": "Disease",
+      "answer": "Citrullinemia",
+      "x": 81.10982259957201,
+      "y": 41.45000000000001,
+      "width": 18.890177400427984,
+      "height": 7.6000000000000005,
+      "group": "disease",
+      "useGroupLabel": false,
+      "element": {}
+    },
+    {
+      "id": "box34",
+      "label": "Disease",
+      "answer": "Argininosuccinic Aciduria (ASA)",
+      "x": 0,
+      "y": 77.25,
+      "width": 33.91205908745772,
+      "height": 7.2,
+      "group": "disease",
+      "useGroupLabel": false,
+      "element": {}
+    }
+  ],
+  "linkGroups": [
+    [
+      "box24",
+      "box25"
+    ]
+  ],
+  "controlsPosition": "right",
+  "controlsOffsetX": -15,
+  "controlsOffsetY": 0
+}

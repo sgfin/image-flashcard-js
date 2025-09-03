@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Flashcard Designer</title>
+    <link rel="stylesheet" href="image-flashcard-designer.css">
+</head>
+<body>
+    <div class="image-flashcard-designer">
+        <div class="toolbar">
+            <h1>Image Flashcard Designer</h1>
+            <div class="toolbar-controls">
+                <input type="file" id="image-upload" accept="image/*" style="display: none;">
+                <button id="upload-btn" class="btn">Upload Image</button>
+                <button id="resize-image-btn" class="btn secondary" style="display: none;">Resize Image</button>
+                <div id="image-size-display" style="display: none; font-size: 0.9rem; color: var(--secondary-color); margin: 0 1rem;"></div>
+                <div class="mode-toggle">
+                    <label>
+                        <input type="radio" name="mode" value="design" checked>
+                        Design Mode
+                    </label>
+                    <label>
+                        <input type="radio" name="mode" value="preview">
+                        Preview Mode
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-layout">
+            <div class="image-container">
+                <div id="image-wrapper">
+                    <img id="target-image" src="" alt="Target Image" style="display: none;">
+                    <div id="boxes-overlay"></div>
+                </div>
+                <div id="drop-zone" class="drop-zone">
+                    <p>Upload an image to get started</p>
+                    <p>or drag and drop an image here</p>
+                </div>
+            </div>
+
+            <div class="control-panel">
+                <div id="design-controls" class="panel-section">
+                    <h3>Design Controls</h3>
+                    
+                    <div class="group-management">
+                        <h4>Groups</h4>
+                        <div class="group-input">
+                            <input type="text" id="new-group-name" placeholder="Group name">
+                            <input type="color" id="new-group-color" value="#ff6b6b">
+                            <button id="add-group-btn" class="btn">Add Group</button>
+                        </div>
+                        <div id="groups-list"></div>
+                    </div>
+
+                    <div class="box-properties">
+                        <h4>Selected Box Properties</h4>
+                        <div id="no-selection">No box selected</div>
+                        <div id="box-editor" style="display: none;">
+                            <label>
+                                Label:
+                                <input type="text" id="box-label">
+                            </label>
+                            <label>
+                                Answer:
+                                <input type="text" id="box-answer">
+                            </label>
+                            <label>
+                                Group:
+                                <select id="box-group">
+                                    <option value="">No Group</option>
+                                </select>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.5rem;">
+                                <input type="checkbox" id="use-group-label">
+                                Display group label (instead of custom label)
+                            </label>
+                            <label>
+                                Link to Box:
+                                <select id="box-link">
+                                    <option value="">Not Linked</option>
+                                </select>
+                            </label>
+                            <div id="linked-boxes-display"></div>
+                            <button id="delete-box-btn" class="btn danger">Delete Box</button>
+                        </div>
+                        <div id="multi-selection-controls" style="display: none;">
+                            <div id="selected-count">0 boxes selected</div>
+                            <div class="multi-selection-actions">
+                                <button id="link-selected-btn" class="btn">Link Selected</button>
+                                <button id="unlink-selected-btn" class="btn secondary">Unlink Selected</button>
+                                <button id="delete-selected-btn" class="btn danger">Delete Selected</button>
+                            </div>
+                            <div class="selection-help">
+                                <small>Hold Shift and click to select multiple boxes</small>
+                            </div>
+                        </div>
+
+                        <div class="data-management">
+                            <h4>Save/Load</h4>
+                            <div class="data-actions">
+                                <button id="save-config-btn" class="btn">Save Config</button>
+                                <input type="file" id="load-config" accept=".json" style="display: none;">
+                                <button id="load-config-btn" class="btn">Load Config</button>
+                            </div>
+                        </div>
+
+                        <div class="quiz-settings">
+                            <h4>Quiz Settings</h4>
+                            <label>
+                                Controls Position:
+                                <select id="controls-position">
+                                    <option value="bottom">Bottom</option>
+                                    <option value="top">Top</option>
+                                    <option value="left">Left</option>
+                                    <option value="right" selected>Right</option>
+                                </select>
+                            </label>
+                        </div>
+
+                        <div class="design-instructions">
+                            <h4>Instructions</h4>
+                            <ul>
+                                <li>Click on the image to create boxes</li>
+                                <li>Drag boxes to reposition</li>
+                                <li>Drag handles to resize</li>
+                                <li>Hold Shift and click to select multiple boxes</li>
+                                <li>Create groups and assign boxes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="quiz-interface" class="panel-section" style="display: none;">
+                    <div class="quiz-header">
+                        <h3>Interactive Flashcards</h3>
+                        <p class="quiz-description">Click on boxes to reveal their answers, or use the controls below.</p>
+                    </div>
+                    
+                    <div class="quiz-controls">
+                        <button id="reset-quiz-btn" class="btn secondary">Reset Quiz</button>
+                        <button id="toggle-all-btn" class="btn primary">Show All Answers</button>
+                    </div>
+                    
+                    <div id="group-toggles" class="group-controls">
+                        <!-- Group toggles will be populated here -->
+                    </div>
+                    
+                    <div class="quiz-instructions">
+                        <h4>How to Use</h4>
+                        <ul>
+                            <li>Click any box to reveal its answer</li>
+                            <li>Use group buttons to show/hide all boxes in a group</li>
+                            <li>Use "Show All Answers" to reveal everything</li>
+                            <li>Use "Reset Quiz" to start over</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="preview-sidebar" class="panel-section" style="display: none;">
+                    <h3>Preview Settings</h3>
+                    
+                    <div class="quiz-settings">
+                        <h4>Quiz Settings</h4>
+                        <label>
+                            Controls Position:
+                            <select id="preview-controls-position">
+                                <option value="bottom">Bottom</option>
+                                <option value="top">Top</option>
+                                <option value="left">Left</option>
+                                <option value="right" selected>Right</option>
+                            </select>
+                        </label>
+                        
+                        <div class="offset-settings">
+                            <h5 style="margin: 1rem 0 0.5rem 0; font-size: 0.9rem; color: #64748b;">Fine-tune Position</h5>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                                <label style="font-size: 0.85rem;">
+                                    X Offset (px):
+                                    <input type="number" id="preview-controls-offset-x" value="0" min="-200" max="200" style="margin-top: 0.2rem;">
+                                </label>
+                                <label style="font-size: 0.85rem;">
+                                    Y Offset (px):
+                                    <input type="number" id="preview-controls-offset-y" value="0" min="-200" max="200" style="margin-top: 0.2rem;">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="data-management">
+                        <h4>Save/Load</h4>
+                        <div class="data-actions">
+                            <button id="preview-save-config-btn" class="btn">Save Config</button>
+                            <input type="file" id="preview-load-config" accept=".json" style="display: none;">
+                            <button id="preview-load-config-btn" class="btn">Load Config</button>
+                        </div>
+                    </div>
+
+                    <div class="preview-instructions">
+                        <h4>Preview Mode</h4>
+                        <ul>
+                            <li>This shows the exact quiz experience</li>
+                            <li>Click boxes to test interactivity</li>
+                            <li>Use controls below image to test functionality</li>
+                            <li>Switch back to Design to make changes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="image-flashcard.js"></script>
+    <script src="image-flashcard-designer.js"></script>
+</body>
+</html>
