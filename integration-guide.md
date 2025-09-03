@@ -4,11 +4,37 @@ This guide shows you how to take a configuration created with the **Image Flashc
 
 > **Note:** This library is planned to be released as a standalone GitHub repository `image-flashcard-js` for easy integration into any website. The Image Flashcard Designer tool will also be available separately for creating quiz configurations.
 
+## Important: HTTP Server Required
+
+**⚠️ Critical**: The Image Flashcard Designer and examples must be served via HTTP (not opened directly in browser) due to browser security restrictions when loading JSON files.
+
+### Start a Local HTTP Server
+
+Run one of these commands in the project directory:
+
+```bash
+# Python 3 (recommended)
+python -m http.server 8000
+
+# Python 2
+python -m SimpleHTTPServer 8000
+
+# Node.js
+npx serve .
+
+# PHP  
+php -S localhost:8000
+```
+
+Then access:
+- **Designer Tool**: `http://localhost:8000/image-flashcard-designer.html`
+- **Examples**: `http://localhost:8000/examples/example.html`
+
 ## Step-by-Step Process
 
 ### 1. Create Your Flashcard Configuration
 
-1. Open the **Image Flashcard Designer** in your browser
+1. Open the **Image Flashcard Designer** at `http://localhost:8000/image-flashcard-designer.html`
 2. Upload your pathway diagram or educational image
 3. Create flashcard areas by clicking on important regions
 4. Group related areas (enzymes, substrates, diseases, etc.)
@@ -187,9 +213,11 @@ You can have multiple visual quizzes on the same page:
 ## Troubleshooting
 
 ### Quiz Not Appearing
+- **Most Common**: Are you serving via HTTP? Quiz files must be served from a web server, not opened directly in browser
 - Check that `image-flashcard.js` is included and loading properly
 - Verify the config file path is correct
 - Ensure the image loads before the script runs
+- Check browser console for "CORS" or "fetch" errors indicating file:// protocol issues
 
 ### Boxes in Wrong Positions
 - Make sure the image file hasn't been resized or cropped

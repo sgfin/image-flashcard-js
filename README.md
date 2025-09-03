@@ -40,6 +40,32 @@ Use the **Image Flashcard Designer** tool (`image-flashcard-designer.html`) to:
 
 See [integration-guide.md](integration-guide.md) for complete setup and usage instructions.
 
+## Running Examples & Designer Tool
+
+**⚠️ Important**: The examples and designer tool must be served via HTTP (not opened directly in browser) due to browser security restrictions when loading JSON files.
+
+### Start a Local HTTP Server
+
+Choose one of these commands in the project directory:
+
+```bash
+# Python 3 (most common)
+python -m http.server 8000
+
+# Python 2
+python -m SimpleHTTPServer 8000
+
+# Node.js (if you have npm installed)
+npx serve .
+
+# PHP
+php -S localhost:8000
+```
+
+Then visit:
+- **Examples**: `http://localhost:8000/examples/example.html`
+- **Designer Tool**: `http://localhost:8000/image-flashcard-designer.html`
+
 ## Example
 
 Check the `/examples` folder for a complete urea cycle pathway quiz example.
